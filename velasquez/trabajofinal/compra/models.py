@@ -10,7 +10,7 @@ class Empleado(models.Model):
     email = models.EmailField(max_length=50)
 
     def __str__(self):
-        return f"{self.nombre}, {self.email}"
+        return f"{self.nombre}"
     
 class Proveedor(models.Model):
     id=models.CharField(primary_key=True, max_length=6)
@@ -26,6 +26,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=50)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return self.nombre

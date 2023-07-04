@@ -27,17 +27,18 @@
             </div>
         </div>
     </div>
-
-    <div class="col-sm-12 col-md-6  col-xl-8 col-xl-8">
+</div>
+<div class="row">
+    <div class="col-12">
         <h2>Lista de Proveedores</h2>
         <table class="table" style="background-color: #4591B8;">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <th>Pais</th>
+                    <th>Direccion</th>
                     <th>Telefono</th>
-                    <th colspan="2">opciones de manejo</th>
+                    <th colspan="3" style="text-align:center">opciones de manejo</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +50,7 @@
                     <td>{{ p.telefono }}</td>
                     <td><a href="edicionproveedor/{{p.id}}" class="btn btn-info">Editar</a></td>
                     <td><a href="eliminarproveedor/{{p.id}}" class="btn btn-danger">Eliminar</a></td>
+                    <td><a href="verproducto/{{p.id}}" class="btn btn-info">Ver producto</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,0 +1,39 @@
+{% extends './base.html' %}
+
+{% block title %}Gestión de Pagos{% endblock %}
+
+{% block body %}
+<div class="row">
+   
+
+    <div class="col-sm-12 col-md-6  col-xl-8 col-xl-8">
+        <h2>Lista de Pagos</h2>
+        <table class="table" style="background-color: #4591B8;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fec_pago</th>
+                    <th>desc</th>
+                    <th>met_pago</th>
+                    <th>Total</th>
+                    <th colspan="2">opciones de manejo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pagos %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.fec_pago }}</td>
+                    <td>{{ p.descuento }}</td>
+                    <td>{{ p.met_pago }}</td>
+                    <td>{{ p.total }}</td>
+                    <td><a href="edicionpago/{{p.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="eliminarpago/{{p.id}}" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

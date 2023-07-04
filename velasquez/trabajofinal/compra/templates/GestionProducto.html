@@ -22,6 +22,14 @@
                     <div class="form-group">
                         <input type="text" name="txtprecio" placeholder="precio_unidad" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <select name="txtproveedor" class="form-control">
+                            {% for proveedor in proveedores %}
+                                <option value="{{proveedor.id}}">{{proveedor.nombre}}</option>
+                            {% endfor %}
+                            </option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-success form-control">Guardar</button>
                 </form>
             </div>
@@ -37,6 +45,7 @@
                     <th>Nombre</th>
                     <th>Descripcion</th>
                     <th>Prec_Unit</th>
+                    <th>Proveedor</th>
                     <th colspan="2">opciones de manejo</th>
                 </tr>
             </thead>
@@ -47,8 +56,9 @@
                     <td>{{ p.nombre }}</td>
                     <td>{{ p.descripcion }}</td>
                     <td>{{ p.precio }}</td>
-                    <td><a href="edicionempleado/{{e.id}}" class="btn btn-info">Editar</a></td>
-                    <td><a href="eliminarempleado/{{e.id}}" class="btn btn-danger">Eliminar</a></td>
+                    <td>{{ p.proveedor }}</td>
+                    <td><a href="edicionproducto/{{p.id}}" class="btn btn-info">Editar</a></td>
+                    <td><a href="eliminarproducto/{{p.id}}" class="btn btn-danger">Eliminar</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
